@@ -6,9 +6,9 @@
 
 / {
     behaviors {
-        esc_grave: esc_grave {
+        morf_esc_grave_en: morf_esc_grave_en {
             compatible = "zmk,behavior-mod-morph";
-            label = "ESC_GRAVE";
+            label = "MORF_ESC_GRAVE_EN";
             bindings = <&kp ESC>, <&kp GRAVE>;
 
             #binding-cells = <0>;
@@ -16,31 +16,58 @@
             keep-mods = <(MOD_LCTL)>;
         };
 
-        i_iot: i_iot {
+        morf_i_iot_ru: morf_i_iot_ru {
             compatible = "zmk,behavior-mod-morph";
-            label = "I_IOT";
+            label = "MORF_I_IOT_RU";
             bindings = <&kp RU_CYRILLIC_I>, <&kp RU_CYRILLIC_SHORT_I>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        ie_io: ie_io {
+        morf_ie_io_ru: morf_ie_io_ru {
             compatible = "zmk,behavior-mod-morph";
-            label = "IE_IO";
+            label = "MORF_IE_IO_RU";
             bindings = <&kp RU_CYRILLIC_IE>, <&kp RU_CYRILLIC_IO>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        soft_hard_sign: soft_hard_sign {
+        morf_soft_hard_sign_ru: morf_soft_hard_sign_ru {
             compatible = "zmk,behavior-mod-morph";
-            label = "SOFT_HARD_SIGN";
+            label = "MORF_SOFT_HARD_SIGN_RU";
             bindings = <&kp RU_CYRILLIC_SOFT_SIGN>, <&kp RU_CYRILLIC_HARD_SIGN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morf_slash_en: morf_slash_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_SLASH_EN";
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morf_dot_en: morf_dot_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_DOT_EN";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morf_comma_en: morf_comma_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_COMMA_EN";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -121,11 +148,11 @@
 
         en {
             bindings = <
-&esc_grave  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp TAB     &kp Q   &kp W     &kp F     &kp P      &kp G                           &kp J   &kp L      &kp U      &kp Y     &trans    &kp BSLH
-&trans      &kp A   &kp R     &kp S     &kp T      &kp D                           &kp H   &kp N      &kp E      &kp I     &kp O     &kp SQT
-&kp LSHFT   &kp Z   &kp X     &kp C     &kp V      &kp B   &kp LBKT     &kp RBKT   &kp K   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                    &kp LGUI  &kp LALT  &kp LCTRL  &mo 2   &kp SPACE    &kp ENTER  &mo 4   &kp RCTRL  &kp RALT   &kp RGUI
+&morf_esc_grave_en  &kp F2  &kp F3       &kp F4          &kp F5       &kp F6                          &kp F7  &kp F8       &kp F9          &kp F10       &kp F11         &kp F12
+&trans              &kp Q   &kp W        &kp F           &kp P        &kp G                           &kp J   &kp L        &kp U           &kp Y         &trans          &kp BACKSPACE
+&kp TAB             &kp A   &mt LSHFT R  &mt LEFT_ALT S  &mt LCTRL T  &kp D                           &kp H   &mt LCTRL N  &mt LEFT_ALT E  &mt LSHFT I   &kp O           &kp SQT
+&trans              &kp Z   &kp X        &kp C           &kp V        &kp B   &kp LBKT     &kp RBKT   &kp K   &kp M        &morf_comma_en  &morf_dot_en  &morf_slash_en  &kp DELETE
+                            &kp LGUI     &kp LALT        &kp LCTRL    &mo 2   &kp SPACE    &kp ENTER  &mo 4   &kp RCTRL    &trans          &trans
             >;
 
             display-name = "En";
@@ -141,11 +168,11 @@
         ru {
             display-name = "Ru";
             bindings = <
-&esc_grave  &kp N1              &kp N2               &kp N3               &kp N4              &kp N5                                         &kp N6               &kp N7               &kp N8             &kp N9                &kp N0              &kp BSPC
-&kp TAB     &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_ZE   &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_HA                             &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_CHE  &kp RU_CYRILLIC_A  &kp RU_CYRILLIC_U     &kp RU_CYRILLIC_YU  &kp BSLH
-&trans      &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_ES   &kp RU_CYRILLIC_EN   &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_EF                             &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_ER   &kp RU_CYRILLIC_O  &i_iot                &ie_io              &trans
-&kp LSHFT   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_PE   &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_SHCHA  &trans       &trans     &kp RU_CYRILLIC_TSE  &kp RU_CYRILLIC_EL   &soft_hard_sign    &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_YA  &kp RSHFT
-                                &kp LGUI             &kp LALT             &kp LCTRL           &mo 2                  &kp SPACE    &kp ENTER  &mo 5                &kp RCTRL            &kp RALT           &kp RGUI
+&morf_esc_grave_en  &kp F2              &kp F3               &kp F4               &kp F5              &kp F6                                         &kp F7               &kp F8               &kp F9                   &kp F10               &kp F11             &kp BSPC
+&kp TAB             &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_ZE   &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_HA                             &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_CHE  &kp RU_CYRILLIC_A        &kp RU_CYRILLIC_U     &kp RU_CYRILLIC_YU  &kp RU_BACKSLASH
+&trans              &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_ES   &kp RU_CYRILLIC_EN   &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_EF                             &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_ER   &kp RU_CYRILLIC_O        &morf_i_iot_ru        &morf_ie_io_ru      &trans
+&kp LSHFT           &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_PE   &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_SHCHA  &trans       &trans     &kp RU_CYRILLIC_TSE  &kp RU_CYRILLIC_EL   &morf_soft_hard_sign_ru  &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_YA  &kp RSHFT
+                                        &kp LGUI             &kp LALT             &kp LCTRL           &mo 2                  &kp SPACE    &kp ENTER  &mo 5                &kp RCTRL            &kp RALT                 &kp RGUI
             >;
 
             sensor-bindings =
@@ -161,7 +188,7 @@
             bindings = <
 &trans  &trans  &trans     &trans    &trans     &trans                          &trans     &trans          &trans          &trans     &trans  &trans
 &trans  &trans  &trans     &trans    &trans     &trans                          &kp PG_UP  &kp HOME        &kp UP_ARROW    &kp END    &trans  &trans
-&trans  &trans  &kp LCTRL  &kp LALT  &kp LSHFT  &trans                          &kp PG_DN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans
+&trans  &trans  &kp LSHFT  &kp LALT  &kp LCTRL  &trans                          &kp PG_DN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans
 &trans  &trans  &trans     &trans    &trans     &trans  &trans       &trans     &trans     &trans          &trans          &trans     &trans  &trans
                 &trans     &trans    &trans     &trans  &kp SPACE    &kp ENTER  &mo 7      &trans          &trans          &trans
             >;
