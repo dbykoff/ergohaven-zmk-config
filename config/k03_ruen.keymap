@@ -69,6 +69,51 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        morf_left_parent_en: morf_left_parent_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_LEFT_PARENT_EN";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morf_right_parent_en: morf_right_parent_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_RIGHT_PARENT_EN";
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morf_greather_than_en: morf_greather_than_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_GREATHER_THAN_EN";
+            bindings = <&kp GREATER_THAN>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morf_less_than_en: morf_less_than_en {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORF_LESS_THAN_EN";
+            bindings = <&kp LESS_THAN>, <&kp LEFT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        h_t_my: h_t_my {
+            compatible = "zmk,behavior-hold-tap";
+            label = "H_T_MY";
+            bindings = <&kp>, <&morf_i_iot_ru>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     combos {
@@ -148,11 +193,11 @@
 
         en {
             bindings = <
-&morf_esc_grave_en  &kp F2  &kp F3       &kp F4          &kp F5       &kp F6                          &kp F7  &kp F8       &kp F9          &kp F10       &kp F11         &kp F12
-&trans              &kp Q   &kp W        &kp F           &kp P        &kp G                           &kp J   &kp L        &kp U           &kp Y         &trans          &kp BACKSPACE
-&kp TAB             &kp A   &mt LSHFT R  &mt LEFT_ALT S  &mt LCTRL T  &kp D                           &kp H   &mt LCTRL N  &mt LEFT_ALT E  &mt LSHFT I   &kp O           &kp SQT
-&trans              &kp Z   &kp X        &kp C           &kp V        &kp B   &kp LBKT     &kp RBKT   &kp K   &kp M        &morf_comma_en  &morf_dot_en  &morf_slash_en  &kp DELETE
-                            &kp LGUI     &kp LALT        &kp LCTRL    &mo 2   &kp SPACE    &kp ENTER  &mo 4   &kp RCTRL    &trans          &trans
+&morf_esc_grave_en  &kp F2  &kp F3       &kp F4          &kp F5       &kp F6                                                 &kp F7     &kp F8       &kp F9          &kp F10         &kp F11         &kp F12
+&trans              &kp B   &kp L        &kp D           &kp W        &kp Z                                                  &kp COMMA  &kp F        &kp O           &kp U           &kp J           &kp BACKSPACE
+&kp TAB             &kp N   &mt LSHFT R  &mt LEFT_ALT T  &mt LCTRL S  &kp G                                                  &kp Y      &mt LCTRL H  &mt LEFT_ALT A  &mt LSHFT E     &kp I           &kp DELETE
+&morf_less_than_en  &kp Q   &kp X        &kp M           &kp C        &kp V   &morf_left_parent_en    &morf_right_parent_en  &kp K      &kp P        &morf_dot_en    &morf_comma_en  &morf_slash_en  &morf_greather_than_en
+                            &kp LGUI     &trans          &mo 3        &mo 2   &kp SPACE               &kp ENTER              &mo 4      &mo 6        &trans          &trans
             >;
 
             display-name = "En";
@@ -168,11 +213,11 @@
         ru {
             display-name = "Ru";
             bindings = <
-&morf_esc_grave_en  &kp F2              &kp F3               &kp F4               &kp F5              &kp F6                                         &kp F7               &kp F8               &kp F9                   &kp F10               &kp F11             &kp BSPC
-&kp TAB             &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_ZE   &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_HA                             &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_CHE  &kp RU_CYRILLIC_A        &kp RU_CYRILLIC_U     &kp RU_CYRILLIC_YU  &kp RU_BACKSLASH
-&trans              &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_ES   &kp RU_CYRILLIC_EN   &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_EF                             &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_ER   &kp RU_CYRILLIC_O        &morf_i_iot_ru        &morf_ie_io_ru      &trans
-&kp LSHFT           &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_PE   &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_SHCHA  &trans       &trans     &kp RU_CYRILLIC_TSE  &kp RU_CYRILLIC_EL   &morf_soft_hard_sign_ru  &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_YA  &kp RSHFT
-                                        &kp LGUI             &kp LALT             &kp LCTRL           &mo 2                  &kp SPACE    &kp ENTER  &mo 5                &kp RCTRL            &kp RALT                 &kp RGUI
+&morf_esc_grave_en  &kp F2              &kp F3                    &kp F4                       &kp F5                    &kp F6                                         &kp F7               &kp F8                    &kp F9                      &kp F10               &kp F11             &kp F12
+&trans              &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_ZE        &kp RU_CYRILLIC_SHA          &kp RU_CYRILLIC_DE        &kp RU_CYRILLIC_HA                             &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_CHE       &kp RU_CYRILLIC_A           &kp RU_CYRILLIC_U     &kp RU_CYRILLIC_YU  &kp BACKSPACE
+&kp TAB             &kp RU_CYRILLIC_VE  &mt LSHFT RU_CYRILLIC_ES  &mt LEFT_ALT RU_CYRILLIC_EN  &mt LCTRL RU_CYRILLIC_TE  &kp RU_CYRILLIC_EF                             &kp RU_CYRILLIC_E    &mt LCTRL RU_CYRILLIC_ER  &mt LEFT_ALT RU_CYRILLIC_O  &h_t_my LSHFT 0       &morf_ie_io_ru      &kp DELETE
+&trans              &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_GHE       &kp RU_CYRILLIC_PE           &kp RU_CYRILLIC_EM        &kp RU_CYRILLIC_SHCHA  &trans       &trans     &kp RU_CYRILLIC_TSE  &kp RU_CYRILLIC_EL        &morf_soft_hard_sign_ru     &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_YA  &trans
+                                        &kp LGUI                  &trans                       &mo 3                     &mo 2                  &kp SPACE    &kp ENTER  &mo 5                &mo 6                     &trans                      &trans
             >;
 
             sensor-bindings =
@@ -186,11 +231,11 @@
 
         nav {
             bindings = <
-&trans  &trans  &trans     &trans    &trans     &trans                          &trans     &trans          &trans          &trans     &trans  &trans
-&trans  &trans  &trans     &trans    &trans     &trans                          &kp PG_UP  &kp HOME        &kp UP_ARROW    &kp END    &trans  &trans
-&trans  &trans  &kp LSHFT  &kp LALT  &kp LCTRL  &trans                          &kp PG_DN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans     &trans    &trans     &trans  &trans       &trans     &trans     &trans          &trans          &trans     &trans  &trans
-                &trans     &trans    &trans     &trans  &kp SPACE    &kp ENTER  &mo 7      &trans          &trans          &trans
+&trans  &trans  &trans     &trans    &trans     &trans                          &trans  &trans          &trans          &trans     &trans  &trans
+&trans  &trans  &trans     &trans    &trans     &trans                          &trans  &kp HOME        &kp UP_ARROW    &kp END    &trans  &trans
+&trans  &trans  &kp LSHFT  &kp LALT  &kp LCTRL  &trans                          &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans     &trans    &trans     &trans  &trans       &trans     &trans  &kp PAGE_UP     &kp PAGE_DOWN   &trans     &trans  &trans
+                &trans     &trans    &trans     &trans  &kp SPACE    &kp ENTER  &mo 7   &trans          &trans          &trans
             >;
 
             display-name = "Navigation";
@@ -199,11 +244,11 @@
         num {
             display-name = "Num";
             bindings = <
-&trans  &trans  &trans        &trans    &trans         &trans                        &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE
-&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                       &trans  &kp N7  &kp N8  &kp N9  &kp PLUS    &kp MINUS
-&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                       &trans  &kp N4  &kp N5  &kp N6  &kp ASTRK   &kp KP_SLASH
-&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans     &trans  &kp N1  &kp N2  &kp N3  &kp KP_DOT  &trans
-                &trans        &trans    &trans         &trans   &trans    &kp ENTER  &mo 7   &trans  &kp N0  &trans
+&trans  &trans  &trans        &trans    &trans         &trans                        &trans  &trans  &trans  &trans   &trans      &kp BACKSPACE
+&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                       &trans  &kp N7  &kp N8  &kp N9   &kp PLUS    &kp MINUS
+&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                       &trans  &kp N4  &kp N5  &kp N6   &kp ASTRK   &kp KP_SLASH
+&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans     &trans  &kp N1  &kp N2  &kp N3   &kp KP_DOT  &trans
+                &trans        &trans    &trans         &trans   &trans    &kp ENTER  &mo 7   &trans  &kp N0  &kp DOT
             >;
         };
 
@@ -232,11 +277,11 @@
 
         fun {
             bindings = <
-&trans  &trans  &trans     &trans    &trans     &trans                          &trans  &trans  &trans   &trans   &trans   &trans
-&trans  &trans  &trans     &trans    &trans     &trans                          &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans
-&trans  &trans  &kp LCTRL  &kp LALT  &kp LSHFT  &trans                          &kp F4  &kp F5  &kp F6   &kp F7   &trans   &trans
-&trans  &trans  &trans     &trans    &trans     &trans  &trans       &trans     &trans  &kp F1  &kp F2   &kp F3   &trans   &trans
-                &trans     &trans    &trans     &trans  &kp SPACE    &kp ENTER  &trans  &trans  &trans   &trans
+&trans  &trans  &trans     &trans    &trans     &trans                          &trans  &trans   &trans   &trans   &trans  &trans
+&trans  &trans  &trans     &trans    &trans     &trans                          &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans
+&trans  &trans  &kp LSHFT  &kp LALT  &kp LCTRL  &trans                          &kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans
+&trans  &trans  &trans     &trans    &trans     &trans  &trans       &trans     &kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans
+                &trans     &trans    &trans     &trans  &kp SPACE    &kp ENTER  &trans  &trans   &trans   &trans
             >;
 
             label = "Fun";
