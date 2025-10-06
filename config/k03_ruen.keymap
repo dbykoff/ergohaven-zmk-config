@@ -114,6 +114,16 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        hrm: hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -193,11 +203,11 @@
 
         en {
             bindings = <
-&morf_esc_grave_en  &kp F2  &kp F3       &kp F4       &kp F5      &kp F6                                                 &kp F7     &kp F8      &kp F9        &kp F10         &kp F11         &kp F12
-&trans              &kp B   &kp L        &kp D        &kp W       &kp Z                                                  &kp COMMA  &kp F       &kp O         &kp U           &kp J           &kp BACKSPACE
-&kp TAB             &kp N   &mt LSHFT R  &mt LCTRL T  &mt LALT S  &kp G                                                  &kp Y      &mt LALT H  &mt LCTRL A   &mt LSHFT E     &kp I           &kp DELETE
-&morf_less_than_en  &kp Q   &kp X        &kp M        &kp C       &kp V   &morf_left_parent_en    &morf_right_parent_en  &kp K      &kp P       &morf_dot_en  &morf_comma_en  &morf_slash_en  &morf_greather_than_en
-                            &kp LGUI     &trans       &mo 3       &mo 2   &kp SPACE               &kp ENTER              &mo 4      &mo 6       &trans        &trans
+&morf_esc_grave_en  &kp F2  &kp F3        &kp F4        &kp F5       &kp F6                                                 &kp F7     &kp F8       &kp F9        &kp F10         &kp F11         &kp F12
+&kp CAPS            &kp B   &kp L         &kp D         &kp W        &kp Z                                                  &kp COMMA  &kp F        &kp O         &kp U           &kp J           &kp BACKSPACE
+&kp TAB             &kp N   &hrm LSHFT R  &hrm LCTRL T  &hrm LALT S  &kp G                                                  &kp Y      &hrm LALT H  &hrm LCTRL A  &hrm LSHFT E    &kp I           &kp DELETE
+&morf_less_than_en  &kp Q   &kp X         &kp M         &kp C        &kp V   &morf_left_parent_en    &morf_right_parent_en  &kp K      &kp P        &morf_dot_en  &morf_comma_en  &morf_slash_en  &morf_greather_than_en
+                            &kp LGUI      &trans        &mo 3        &mo 2   &kp SPACE               &kp ENTER              &mo 4      &mo 6        &trans        &trans
             >;
 
             display-name = "En";
