@@ -141,7 +141,7 @@
         cmben {
             bindings = <&layer_en>;
             key-positions = <16 15>;
-            layers = <1>;
+            layers = <2>;
         };
 
         cmbru {
@@ -182,7 +182,7 @@
         layer_ru: layer_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &to_ru>;
+            bindings = <&to 2 &to_ru>;
             label = "LAYER_RU";
             tap-ms = <30>;
             wait-ms = <0>;
@@ -239,7 +239,7 @@
 &none  &none      &none     &none     &none      &none                          &kp INS             &kp HOME        &kp UP_ARROW    &kp END    &none                &none
 &none  &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                          &kp LC(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp LC(RIGHT_ARROW)  &none
 &none  &none      &none     &none     &none      &none  &none        &none      &none               &kp PAGE_UP     &none           &kp PG_DN  &none                &kp DELETE
-                  &none     &none     &none      &none  &kp SPACE    &kp ENTER  &mo 7               &none           &none           &none
+                  &none     &none     &none      &none  &kp SPACE    &kp ENTER  &none               &none           &none           &none
             >;
 
             display-name = "Navigation";
@@ -252,17 +252,17 @@
 &none    &none  &none  &none  &none  &none                          &none  &kp N7  &kp N8  &kp N9   &kp PLUS   &kp MINUS
 &none    &none  &none  &none  &none  &none                          &none  &kp N4  &kp N5  &kp N6   &kp ASTRK  &kp FSLH
 &none    &none  &none  &none  &none  &none  &none        &none      &none  &kp N1  &kp N2  &kp N3   &none      &kp DELETE
-                &none  &none  &none  &none  &kp SPACE    &kp ENTER  &mo 7  &none   &kp N0  &kp DOT
+                &none  &none  &none  &none  &kp SPACE    &kp ENTER  &none  &none   &kp N0  &kp DOT
             >;
         };
 
         sym_en {
             bindings = <
-&none  &none     &kp AT    &kp DLLR   &kp HASH  &none                      &none      &none     &kp CARET     &none           &none      &none
-&none  &none     &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                  &kp TILDE  &kp LBKT  &kp RBKT      &kp RBKT        &kp PLUS   &kp MINUS
-&none  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                   &kp PRCNT  &kp LBRC  &kp RBRC      &kp UNDERSCORE  &kp ASTRK  &kp FSLH
-&none  &none     &kp STAR  &none      &kp FSLH  &none      &none    &none  &none      &kp PIPE  &none         &kp AMPS        &kp EXCL   &kp QUESTION
-                 &none     &none      &none     &mo 7      &none    &none  &none      &none     &morf_dot_en  &morf_comma_en
+&kp ESC   &none      &none     &none     &none      &none                  &kp GRAVE   &kp PIPE              &kp CARET       &kp BSLH                &kp EXCLAMATION  &kp BACKSPACE
+&kp CAPS  &none      &kp LT    &none     &kp GT     &none                  &kp TILDE   &morf_left_parent_en  &kp UNDERSCORE  &morf_right_parent_en   &kp PLUS         &kp MINUS
+&kp TAB   &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                  &kp PRCNT   &morf_less_than_en    &kp EQUAL       &morf_greather_than_en  &kp ASTRK        &kp FSLH
+&none     &none      &kp LPAR  &none     &kp RPAR   &none  &none    &none  &kp DOLLAR  &kp HASH              &kp AT_SIGN     &kp AMPS                &kp QUESTION     &kp DEL
+                     &none     &none     &mo 7      &none  &none    &none  &none       &none                 &morf_dot_en    &morf_comma_en
             >;
 
             display-name = "Symbols";
@@ -275,7 +275,7 @@
 &none  &none        &en LT        &kp EQUAL  &en GT       &en GRAVE                      &none           &en LBKT  &kp UNDER     &en RBKT        &none     &none
 &none  &kp RU_BSLH  &kp LPAR      &kp MINUS  &kp RPAR     &kp PLUS                       &kp RU_PERCENT  &en LBRC  &none         &en RBRC        &kp EXCL  &kp RU_QUESTION
 &none  &none        &kp RU_ASTRK  &none      &kp RU_FSLH  &kp RU_NUMERO  &none    &none  &none           &en PIPE  &en TILDE     &en AMPS        &none     &none
-                    &none         &none      &none        &mo 7          &none    &none  &none           &none     &morf_dot_ru  &morf_comma_ru
+                    &none         &none      &mo 7        &none          &none    &none  &none           &none     &morf_dot_ru  &morf_comma_ru
             >;
         };
 
@@ -285,7 +285,7 @@
 &none  &none      &none     &none     &none      &none                          &none  &kp F9  &kp F10  &kp F11  &kp F12  &none
 &none  &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                          &none  &kp F5  &kp F6   &kp F7   &kp F8   &none
 &none  &none      &none     &none     &none      &none  &none        &none      &none  &kp F1  &kp F2   &kp F3   &kp F4   &none
-                  &none     &none     &none      &none  &kp SPACE    &kp ENTER  &none  &none   &none    &none
+                  &none     &none     &mo 7      &none  &kp SPACE    &kp ENTER  &none  &none   &none    &none
             >;
 
             label = "Fun";
