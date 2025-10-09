@@ -6,16 +6,6 @@
 
 / {
     behaviors {
-        morf_esc_grave_en: morf_esc_grave_en {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MORF_ESC_GRAVE_EN";
-            bindings = <&kp ESC>, <&kp GRAVE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-
         morf_i_iot_ru: morf_i_iot_ru {
             compatible = "zmk,behavior-mod-morph";
             label = "MORF_I_IOT_RU";
@@ -182,7 +172,7 @@
         layer_ru: layer_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 2 &to_ru>;
+            bindings = <&to 1 &to_ru>;
             label = "LAYER_RU";
             tap-ms = <30>;
             wait-ms = <0>;
@@ -248,21 +238,21 @@
         num {
             display-name = "Num";
             bindings = <
-&trans  &none  &none  &none  &none  &none                          &none  &none   &none   &none    &none      &kp BACKSPACE
-&trans  &none  &none  &none  &none  &none                          &none  &kp N7  &kp N8  &kp N9   &kp PLUS   &kp MINUS
-&trans  &none  &none  &none  &none  &none                          &none  &kp N4  &kp N5  &kp N6   &kp ASTRK  &kp FSLH
-&trans  &none  &none  &none  &none  &none  &none        &none      &none  &kp N1  &kp N2  &kp N3   &none      &kp DELETE
-               &none  &none  &none  &none  &kp SPACE    &kp ENTER  &none  &none   &kp N0  &kp DOT
+&trans  &none  &none  &none  &none  &none                          &none   &none   &none   &none    &none      &kp BACKSPACE
+&trans  &none  &none  &none  &none  &none                          &none   &kp N7  &kp N8  &kp N9   &kp PLUS   &kp MINUS
+&trans  &none  &none  &none  &none  &none                          &none   &kp N4  &kp N5  &kp N6   &kp ASTRK  &kp FSLH
+&trans  &none  &none  &none  &none  &none  &none        &none      &kp N0  &kp N1  &kp N2  &kp N3   &none      &kp DELETE
+               &none  &none  &none  &none  &kp SPACE    &kp ENTER  &none   &none   &kp N0  &kp DOT
             >;
         };
 
         sym_en {
             bindings = <
-&kp ESC   &none      &none     &none     &none      &none                  &kp GRAVE   &kp PIPE              &kp CARET       &kp BSLH                &kp EXCLAMATION  &kp BACKSPACE
-&kp CAPS  &none      &kp LT    &none     &kp GT     &none                  &kp TILDE   &morf_left_parent_en  &kp UNDERSCORE  &morf_right_parent_en   &kp PLUS         &kp MINUS
-&kp TAB   &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                  &kp PRCNT   &morf_less_than_en    &kp EQUAL       &morf_greather_than_en  &kp ASTRK        &kp FSLH
-&none     &none      &kp LPAR  &none     &kp RPAR   &none  &none    &none  &kp DOLLAR  &kp HASH              &kp AT_SIGN     &kp AMPS                &kp QUESTION     &kp DEL
-                     &none     &none     &mo 7      &none  &none    &none  &none       &none                 &morf_dot_en    &morf_comma_en
+&kp ESC   &none      &none         &none     &none      &none                         &none       &none                 &kp CARET       &none                   &none         &kp BACKSPACE
+&kp CAPS  &none      &kp QUESTION  &kp PIPE  &kp EXCL   &kp GRAVE                     &kp TILDE   &morf_left_parent_en  &kp UNDERSCORE  &morf_right_parent_en   &kp PLUS      &kp MINUS
+&kp TAB   &kp LCTRL  &kp LWIN      &kp LALT  &kp LSHFT  &none                         &kp PRCNT   &morf_less_than_en    &kp EQUAL       &morf_greather_than_en  &kp ASTRK     &morf_slash_en
+&none     &none      &none         &none     &none      &none      &none    &kp EXCL  &kp DOLLAR  &kp HASH              &kp AT_SIGN     &kp AMPS                &kp QUESTION  &kp DEL
+                     &none         &none     &mo 7      &none      &none    &none     &none       &none                 &morf_dot_en    &morf_comma_en
             >;
 
             display-name = "Symbols";
