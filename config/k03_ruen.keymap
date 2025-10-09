@@ -250,7 +250,7 @@
 &kp ESC   &kp F2        &kp F3           &kp F4           &kp F5        &kp F6                          &kp F7  &kp F8        &kp F9           &kp F10          &kp F11       &kp BACKSPACE
 &kp CAPS  &kp B         &kp L            &kp D            &kp W         &kp Z                           &none   &kp F         &kp O            &kp U            &kp J         &none
 &kp TAB   &hrm LCTRL N  &hrm LEFT_GUI R  &hrm LEFT_ALT T  &hrm LSHFT S  &kp G                           &kp Y   &hrm LSHFT H  &hrm LEFT_ALT A  &hrm LEFT_WIN E  &hrm LCTRL I  &none
-&none     &kp Q         &kp X            &kp M            &kp C         &kp V   &none        &none      &kp K   &kp P         &none            &none            &none         &kp DELETE
+&none     &kp Q         &kp X            &kp M            &kp C         &kp V   &none        &none      &none   &kp K         &kp P            &none            &none         &kp DELETE
                         &none            &none            &mo 3         &mo 2   &kp SPACE    &kp ENTER  &mo 4   &mo 6         &morf_dot_en     &morf_comma_en
             >;
 
