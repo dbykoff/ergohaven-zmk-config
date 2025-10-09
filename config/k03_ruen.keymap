@@ -112,7 +112,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             flavor = "balanced";
         };
 
@@ -141,7 +141,7 @@
         cmben {
             bindings = <&layer_en>;
             key-positions = <16 15>;
-            layers = <2>;
+            layers = <1>;
         };
 
         cmbru {
@@ -235,11 +235,11 @@
 
         nav {
             bindings = <
-&none  &none      &none     &none     &none      &none                          &none               &none           &none           &none      &none                &kp BACKSPACE
-&none  &none      &none     &none     &none      &none                          &kp INS             &kp HOME        &kp UP_ARROW    &kp END    &none                &none
-&none  &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                          &kp LC(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp LC(RIGHT_ARROW)  &none
-&none  &none      &none     &none     &none      &none  &none        &none      &none               &kp PAGE_UP     &none           &kp PG_DN  &none                &kp DELETE
-                  &none     &none     &none      &none  &kp SPACE    &kp ENTER  &none               &none           &none           &none
+&trans  &none      &none     &none     &none      &none                          &none               &none           &none           &none      &none                &kp BACKSPACE
+&trans  &none      &none     &none     &none      &none                          &kp INS             &kp HOME        &kp UP_ARROW    &kp END    &none                &none
+&trans  &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                          &kp LC(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp LC(RIGHT_ARROW)  &none
+&trans  &none      &none     &none     &none      &none  &none        &none      &none               &kp PAGE_UP     &none           &kp PG_DN  &none                &kp DELETE
+                   &none     &none     &none      &none  &kp SPACE    &kp ENTER  &none               &none           &none           &none
             >;
 
             display-name = "Navigation";
@@ -248,11 +248,11 @@
         num {
             display-name = "Num";
             bindings = <
-&kp ESC  &none  &none  &none  &none  &none                          &none  &none   &none   &none    &none      &kp BACKSPACE
-&none    &none  &none  &none  &none  &none                          &none  &kp N7  &kp N8  &kp N9   &kp PLUS   &kp MINUS
-&none    &none  &none  &none  &none  &none                          &none  &kp N4  &kp N5  &kp N6   &kp ASTRK  &kp FSLH
-&none    &none  &none  &none  &none  &none  &none        &none      &none  &kp N1  &kp N2  &kp N3   &none      &kp DELETE
-                &none  &none  &none  &none  &kp SPACE    &kp ENTER  &none  &none   &kp N0  &kp DOT
+&trans  &none  &none  &none  &none  &none                          &none  &none   &none   &none    &none      &kp BACKSPACE
+&trans  &none  &none  &none  &none  &none                          &none  &kp N7  &kp N8  &kp N9   &kp PLUS   &kp MINUS
+&trans  &none  &none  &none  &none  &none                          &none  &kp N4  &kp N5  &kp N6   &kp ASTRK  &kp FSLH
+&trans  &none  &none  &none  &none  &none  &none        &none      &none  &kp N1  &kp N2  &kp N3   &none      &kp DELETE
+               &none  &none  &none  &none  &kp SPACE    &kp ENTER  &none  &none   &kp N0  &kp DOT
             >;
         };
 
@@ -271,21 +271,21 @@
         sym_ru {
             display-name = "Symbols";
             bindings = <
-&none  &none        &en AT        &en DLLR   &en HASH     &none                          &none           &none     &en CARET     &none           &none     &none
-&none  &none        &en LT        &kp EQUAL  &en GT       &en GRAVE                      &none           &en LBKT  &kp UNDER     &en RBKT        &none     &none
-&none  &kp RU_BSLH  &kp LPAR      &kp MINUS  &kp RPAR     &kp PLUS                       &kp RU_PERCENT  &en LBRC  &none         &en RBRC        &kp EXCL  &kp RU_QUESTION
-&none  &none        &kp RU_ASTRK  &none      &kp RU_FSLH  &kp RU_NUMERO  &none    &none  &none           &en PIPE  &en TILDE     &en AMPS        &none     &none
-                    &none         &none      &mo 7        &none          &none    &none  &none           &none     &morf_dot_ru  &morf_comma_ru
+&trans  &none        &en AT        &en DLLR   &en HASH     &none                          &none           &none     &en CARET     &none           &none     &kp BACKSPACE
+&trans  &none        &en LT        &kp EQUAL  &en GT       &en GRAVE                      &none           &en LBKT  &kp UNDER     &en RBKT        &none     &none
+&trans  &kp RU_BSLH  &kp LPAR      &kp MINUS  &kp RPAR     &kp PLUS                       &kp RU_PERCENT  &en LBRC  &none         &en RBRC        &kp EXCL  &kp RU_QUESTION
+&trans  &none        &kp RU_ASTRK  &none      &kp RU_FSLH  &kp RU_NUMERO  &none    &none  &none           &en PIPE  &en TILDE     &en AMPS        &none     &kp DELETE
+                     &none         &none      &mo 7        &none          &none    &none  &none           &none     &morf_dot_ru  &morf_comma_ru
             >;
         };
 
         fun {
             bindings = <
-&none  &none      &none     &none     &none      &none                          &none  &none   &none    &none    &none    &none
-&none  &none      &none     &none     &none      &none                          &none  &kp F9  &kp F10  &kp F11  &kp F12  &none
-&none  &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                          &none  &kp F5  &kp F6   &kp F7   &kp F8   &none
-&none  &none      &none     &none     &none      &none  &none        &none      &none  &kp F1  &kp F2   &kp F3   &kp F4   &none
-                  &none     &none     &mo 7      &none  &kp SPACE    &kp ENTER  &none  &none   &none    &none
+&trans  &none      &none     &none     &none      &none                          &none  &none   &none    &none    &none    &trans
+&trans  &none      &none     &none     &none      &none                          &none  &kp F9  &kp F10  &kp F11  &kp F12  &none
+&trans  &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                          &none  &kp F5  &kp F6   &kp F7   &kp F8   &none
+&trans  &none      &none     &none     &none      &none  &none        &none      &none  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+                   &none     &none     &mo 7      &none  &kp SPACE    &kp ENTER  &none  &none   &none    &none
             >;
 
             label = "Fun";
