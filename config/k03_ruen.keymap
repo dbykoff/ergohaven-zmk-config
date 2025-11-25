@@ -299,8 +299,8 @@
             bindings = <
 &kp ESC   &none      &none     &none     &none      &none                        &kp RU_PERCENT   &en HASH              &en AMPERSAND  &en DOLLAR              &en CARET     &kp BACKSPACE
 &kp CAPS  &none      &none     &none     &none      &none                        &en GRAVE        &morf_left_parent_ru  &kp MINUS      &morf_right_parent_ru   &none         &en PIPE
-&kp TAB   &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                        &en APOSTROPHE   &morf_less_than_ru    &kp EQUAL      &morf_greather_than_ru  &kp RU_SLASH  &kp RU_BACKSLASH
-&none     &none      &none     &none     &none      &none  &none    &kp RU_EXCL  &en RU_QUESTION  &en RU_ASTRK          &en AT_SIGN    &morf_comma_ru          &morf_dot_ru  &kp DEL
+&kp TAB   &kp LCTRL  &kp LWIN  &kp LALT  &kp LSHFT  &none                        &en APOS         &morf_less_than_ru    &kp EQUAL      &morf_greather_than_ru  &kp RU_SLASH  &kp RU_BACKSLASH
+&none     &none      &none     &none     &none      &none  &none    &kp RU_EXCL  &kp RU_QUESTION  &kp RU_ASTRK          &en AT_SIGN    &morf_comma_ru          &morf_dot_ru  &kp DEL
                      &none     &none     &mo 7      &none  &none    &none        &none            &none                 &none          &none
             >;
         };
